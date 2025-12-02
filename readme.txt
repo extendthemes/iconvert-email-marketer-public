@@ -14,13 +14,13 @@ iConvert Email Marketer
 == Description ==
 
 Design mobile friendly emails or use predefined templates to use as transactional emails or newsletters.
-Sends Transactional emails using different providers: SMTP, SendGrid, Maijet, Campaign Monitor.
+Sends Transactional emails using different providers: SMTP, SendGrid, Mailjet, Campaign Monitor.
 Design emails layout for newsletters and export the html to your sending provider.
 
 
 == Source Files ==
 
-📂 [GitHub Repository](https://github.com/extendthemes/iconvert-promoter-public)
+📂 [GitHub Repository](https://github.com/extendthemes/iconvert-email-marketer-public)
 
 == Frequently Asked Questions ==
 
