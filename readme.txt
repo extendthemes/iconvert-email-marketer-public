@@ -17,6 +17,8 @@ Design mobile friendly emails or use predefined templates to use as transactiona
 Sends Transactional emails using different providers: SMTP, SendGrid, Mailjet, Campaign Monitor.
 Design emails layout for newsletters and export the html to your sending provider.
 
+== External Services ==
+iConvert Email Marketer uses a remote website to retrieve predefined email templates: [https://mail-templates.iconvert.pro/wp-json/email-builder/v1](https://mail-templates.iconvert.pro/wp-json/email-builder/v1).
 
 == Source Files ==
 
