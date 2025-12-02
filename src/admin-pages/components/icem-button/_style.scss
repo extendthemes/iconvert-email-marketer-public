@@ -1,0 +1,58 @@
+body:not(#extra-1) {
+	.icem-button {
+		background-color: var(--icem-primary-bg-color);
+		color: var(--icem-primary-text-color);
+		border-radius: var(--icem-border-radius);
+		padding: 8px 15px;
+		height: var(--icem-controls-height);
+		font-size: 14px;
+		font-weight: 500;
+		transition: 0.3s ease-in-out;
+		transition-property: background-color, border-color;
+
+
+
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: var(--icem-primary-bg-color--hover);
+		}
+
+		svg {
+			margin-left: -4px;
+			margin-top: 2px;
+		}
+
+		&.is-destructive {
+			background-color: var(--icem-destruction-color);
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: var(--icem-destruction-color--hover);
+			}
+
+		}
+		&.is-secondary {
+			background-color: transparent;
+			border: 1px solid #D4D4D4;
+			color: var(--icem-primary-bg-color);
+			box-shadow: 0px 1px 3px 0px #0000001A;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background: #00000008;
+				box-shadow: 0px 1px 3px 0px #0000001A;
+
+			}
+
+		}
+
+		&[disabled] {
+			opacity: 0.5;
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+body:not(#extra-1) {
+	.icem-textarea {
+
+		&__input {
+			textarea {
+				border-radius: var(--icem-border-radius);
+				font-size: 14px;
+				color: var(--icem-text-color);
+				padding-left: 12px;
+				padding-right: 12px;
+				padding-top: 8px;
+				padding-bottom: 8px;
+
+				border: 1px solid var(--icem-border-color);
+				::placeholder {
+					color: var(--icem-muted-text-color);
+
+				}
+			}
+		}
+	}
+}

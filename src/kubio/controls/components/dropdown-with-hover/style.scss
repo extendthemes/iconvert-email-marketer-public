@@ -1,0 +1,35 @@
+.kubio-dropdown-with-hover {
+  z-index: 9999 !important;
+  &__content {
+	 margin: -8px;
+
+	.components-menu-group + .components-menu-group {
+	  margin-top: 3px !important;
+	  padding-top: 3px !important;
+	  border-color: #e4e7ed !important;
+
+	  //margin-left: -12px;
+	  //margin-right: -12px;
+	  //> * {
+	  //padding-left: 12px;
+	  //padding-right: 12px;
+	  //}
+	}
+
+	.components-menu-item__item {
+	   min-width: unset !important;
+	}
+  }
+
+  &__popover {
+	.components-popover__content {
+	  min-width: 80px !important;
+	  margin-right: -12px !important;
+	}
+	&.kubio-dropdown-with-hover__section-options__submenu {
+	  .components-popover__content {
+		margin-right: 0px !important;
+	  }
+	}
+  }
+}

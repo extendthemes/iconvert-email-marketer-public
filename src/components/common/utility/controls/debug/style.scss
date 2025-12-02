@@ -1,0 +1,28 @@
+.debug-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  color: #333;
+
+  label {
+	margin: 0;
+  }
+
+  button {
+	border: 1px solid #666;
+	border-radius: 5px;
+	font-size: 13px;
+	margin-left: 10px;
+
+	&:hover {
+	  background-color: #888888;
+	  color: white;
+	}
+  }
+}
+
+textarea {
+  width: 100%;
+  font-size: 12px;
+}

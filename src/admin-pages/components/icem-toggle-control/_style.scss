@@ -1,0 +1,19 @@
+
+.icem-toggle-control {
+
+	.components-form-toggle__thumb {
+		//background-color:  var(--icem-primary-bg-color);
+	}
+	.components-form-toggle.is-checked {
+		.components-form-toggle__track {
+			background-color: var(--icem-primary-bg-color);
+			border-color: var(--icem-primary-bg-color);
+		}
+
+
+		.components-form-toggle__thumb {
+			background-color:  white;
+		}
+	}
+
+}

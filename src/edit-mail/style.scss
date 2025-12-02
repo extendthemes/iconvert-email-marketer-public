@@ -1,0 +1,94 @@
+@import "~@wordpress/base-styles/colors";
+@import "~@wordpress/base-styles/variables";
+@import "~@wordpress/base-styles/mixins";
+@import "~@wordpress/base-styles/breakpoints";
+@import "~@wordpress/base-styles/animations";
+@import "~@wordpress/base-styles/z-index";
+@import "~@wordpress/interface/src/style.scss";
+
+// Internal
+// @import "@iconvertem/components/header/styles";
+// @import "@iconvertem/components/sidebar/styles";
+// @import "@iconvertem/components/block-editor/styles";
+
+@import "../kubio/controls/style.scss";
+@import "./style-old.scss";
+
+@import "../blocks/common";
+@import "../blocks/block-row/editor";
+@import "../blocks/block-row/style";
+@import "@iconvertem/components/common/style.scss";
+@import "@iconvertem/components/block-editor/styles.scss";
+
+//Format library
+@import "../format-library/style.scss";
+
+// In order to use mix-blend-mode, this element needs to have an explicitly set background-color
+// We scope it to .wp-toolbar to be wp-admin only, to prevent bleed into other implementations
+html.wp-toolbar {
+  background: $white;
+}
+
+body.block-editor-page {
+  @include wp-admin-reset(".block-editor");
+}
+
+.cs_promorictext-block-editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: calc(100vh - 32px);
+}
+
+.cs_promorictext-block-editor,
+  // The modals are shown outside the .cs_promorictext-block-editor wrapper, they need these styles.
+.components-modal__frame {
+  @include reset;
+}
+
+.block-editor-block-list__block {
+  &.is-selected {
+    box-shadow: inset 0 0 1px 1px var(--wp-admin-theme-color);
+  }
+
+  // &::after {
+  //   display: none;
+  // }
+}
+
+.iconvertem-editing-tab {
+  border-top: 1px solid #e0e0e0;
+  background-color: #fafafa;
+
+  > .components-tab-panel__tabs > button {
+    width: 100%;
+    text-align: center;
+    display: block;
+    background-color: hsl(0deg 0% 96%);
+
+    &:hover,
+    &.is-active {
+      background-color: hsl(200deg 100% 87%);
+    }
+  }
+}
+
+
+html.block-editor-block-preview__content-iframe, html.block-editor-block-preview__content-iframe body {
+  position: relative !important;
+}
+
+table.wp-block:not(.extra-1):not(.extra-2) {
+	margin: 0;
+	max-width: unset;
+}
+
+.block-editor-block-types-list__list-item[draggable="false"] {
+	opacity: 0.2;
+	pointer-events: none;
+}
+.components-button.is-small.has-icon:not(.has-text) {
+	width: 24px;
+}

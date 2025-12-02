@@ -1,0 +1,28 @@
+.cs_promorictext-block-editor__block-list {
+	padding-bottom: $grid-unit-60;
+	padding-top: $header-height + 75;
+	margin-left: auto;
+	margin-right: auto;
+
+    .block-editor-block-list__block {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wp-block {
+        //max-width: $content-width;
+        //max-width: 80%;
+    }
+  table {
+	width: 100%;
+  }
+}
+
+.block-editor-block-parent-selector {
+    &__button.is-compact.has-icon:not(.has-text) {
+        min-width: 48px;
+        min-height: 48px;
+
+    }
+}
+

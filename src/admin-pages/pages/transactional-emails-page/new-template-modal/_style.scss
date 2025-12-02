@@ -1,0 +1,48 @@
+.iconvertem-new-template-modal {
+
+
+
+
+	&__select-form-placeholder {
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+
+		&__title {
+			margin: 0;
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 1.5;
+
+		}
+
+		&__description {
+			text-align: var(--icem-muted-text-color);
+			font-size: 14px;
+		}
+
+		svg {
+			margin-bottom: 10px;
+		}
+
+	}
+
+
+
+	&__placeholder-select-event-form {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	&__no-forms-available-notice {
+		display: flex;
+		align-items: center;
+		color: var(--icem-muted-text-color);
+		font-size: 16px;
+		font-weight: 600;
+		height: var(--icem-controls-height);
+	}
+}

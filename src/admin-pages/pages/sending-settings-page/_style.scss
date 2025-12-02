@@ -1,0 +1,39 @@
+.icem-settings-page__content {
+	flex: 1;
+	background: white;
+	margin-left: calc(-1 * var(--icem-spacing));
+	margin-right: calc(-1 * var(--icem-spacing));
+	margin-bottom: calc(-1 * var(--icem-spacing));
+	padding: var(--icem-spacing);
+	padding-top: 20px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	&__card {
+		max-width: min(100%, 800px);
+		border: 1px solid var(--icem-border-color);
+		padding: 20px;
+		border-radius: var(--icem-border-radius);
+
+		&__footer {
+			display: flex;
+			gap: 10px;
+			justify-content: flex-end;
+			align-items: center;
+		}
+	}
+	.icem-radio-group-with-icons {
+		margin-top: 20px;
+	}
+	.icem-radio-item-with-icon__campaign-monitor {
+		.icem-radio-item-with-icon__icon__container svg {
+			max-height: min(60px, 100%) ;
+		}
+	}
+	.icem-radio-item-with-icon__smtp {
+		.icem-radio-item-with-icon__icon__container svg {
+			max-height: min(30px, 100%) ;
+		}
+	}
+}

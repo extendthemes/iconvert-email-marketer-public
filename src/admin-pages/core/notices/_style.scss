@@ -1,0 +1,319 @@
+
+.iconvertem-notice-holder {
+	position: fixed;
+	z-index: 101;
+	top: 32px;
+	right: 30px;
+	padding-top: 15px;
+
+	.iconvertem-notice {
+		margin: 0 0 15px 15px;
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		flex-grow: 1;
+		border-radius: 3px;
+		border-left-width: 10px;
+		padding: 0;
+		padding-left: 50px;
+		min-width: 200px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		h3 {
+			font-size: 14px;
+			font-weight: 500;
+			font-style: normal;
+			letter-spacing: 0px;
+			text-align: left;
+			margin: 0;
+		}
+
+		p {
+			color: #1d2327;
+			font-size: 13px;
+			font-weight: 400;
+			font-style: normal;
+			letter-spacing: 0px;
+			text-align: left;
+			margin: 0;
+			padding: 0;
+		}
+
+		$primary-color: #5246f1;
+		$primary-color-darker-10: darken($primary-color, 10%);
+		$primary-color-darker-20: darken($primary-color, 20%);
+		$primary-color-darker-30: darken($primary-color, 30%);
+		$primary-color-darker-40: darken($primary-color, 40%);
+		$primary-color-darker-50: darken($primary-color, 50%);
+
+		$secondary-color: #eb7442;
+		$secondary-color-darker-10: darken($secondary-color, 10%);
+		$secondary-color-darker-20: darken($secondary-color, 20%);
+		$secondary-color-darker-30: darken($secondary-color, 30%);
+		$secondary-color-darker-40: darken($secondary-color, 40%);
+		$secondary-color-darker-50: darken($secondary-color, 50%);
+
+		$tertiary-color: #e2f1fc;
+		$tertiary-color-darker-10: darken($tertiary-color, 10%);
+		$tertiary-color-darker-20: darken($tertiary-color, 20%);
+		$tertiary-color-darker-30: darken($tertiary-color, 30%);
+		$tertiary-color-darker-40: darken($tertiary-color, 40%);
+		$tertiary-color-darker-50: darken($tertiary-color, 50%);
+
+		$default-color: #1d2327;
+		$light-color: #ffffff;
+
+		$info-color: #5246f1;
+		$danger-color: #e83d3d;
+		$success-color: #3be376;
+		$warning-color: #f2c744;
+
+		$default-alert-color: #2b3337;
+
+		$default-alert-color-lighten-10: lighten($default-alert-color, 50%);
+		$default-alert-color-lighten-20: lighten($default-alert-color, 60%);
+		$default-alert-color-lighten-30: lighten($default-alert-color, 70%);
+		$default-alert-color-lighten-40: lighten($default-alert-color, 80%);
+		$default-alert-color-lighten-50: lighten($default-alert-color, 90%);
+
+		$default-alert-color-darken-10: darken($default-alert-color, 10%);
+		$default-alert-color-darken-20: darken($default-alert-color, 20%);
+		$default-alert-color-darken-30: darken($default-alert-color, 30%);
+		$default-alert-color-darken-40: darken($default-alert-color, 40%);
+		$default-alert-color-darken-50: darken($default-alert-color, 50%);
+
+		$info-alert-color: #5246f1;
+
+		$info-alert-color-lighten-10: lighten($info-alert-color, 15%);
+		$info-alert-color-lighten-20: lighten($info-alert-color, 25%);
+		$info-alert-color-lighten-30: lighten($info-alert-color, 35%);
+		$info-alert-color-lighten-40: lighten($info-alert-color, 45%);
+		$info-alert-color-lighten-50: lighten($info-alert-color, 55%);
+
+		$info-alert-color-darken-10: darken($info-alert-color, 10%);
+		$info-alert-color-darken-20: darken($info-alert-color, 20%);
+		$info-alert-color-darken-30: darken($info-alert-color, 30%);
+		$info-alert-color-darken-40: darken($info-alert-color, 40%);
+		$info-alert-color-darken-50: darken($info-alert-color, 50%);
+
+		$error-alert-color: #e83d3d;
+
+		$error-alert-color-lighten-10: lighten($error-alert-color, 20%);
+		$error-alert-color-lighten-20: lighten($error-alert-color, 30%);
+		$error-alert-color-lighten-30: lighten($error-alert-color, 40%);
+		$error-alert-color-lighten-40: lighten($error-alert-color, 50%);
+		$error-alert-color-lighten-50: lighten($error-alert-color, 60%);
+
+		$error-alert-color-darken-10: darken($error-alert-color, 10%);
+		$error-alert-color-darken-20: darken($error-alert-color, 20%);
+		$error-alert-color-darken-30: darken($error-alert-color, 30%);
+		$error-alert-color-darken-40: darken($error-alert-color, 40%);
+		$error-alert-color-darken-50: darken($error-alert-color, 50%);
+
+		$success-alert-color: #3be376;
+
+		$success-alert-color-lighten-10: lighten($success-alert-color, 20%);
+		$success-alert-color-lighten-20: lighten($success-alert-color, 30%);
+		$success-alert-color-lighten-30: lighten($success-alert-color, 40%);
+		$success-alert-color-lighten-40: lighten($success-alert-color, 50%);
+		$success-alert-color-lighten-50: lighten($success-alert-color, 60%);
+
+		$success-alert-color-darken-10: darken($success-alert-color, 10%);
+		$success-alert-color-darken-20: darken($success-alert-color, 20%);
+		$success-alert-color-darken-30: darken($success-alert-color, 30%);
+		$success-alert-color-darken-40: darken($success-alert-color, 40%);
+		$success-alert-color-darken-50: darken($success-alert-color, 50%);
+
+		$warning-alert-color: #f2c744;
+
+		$warning-alert-color-lighten-10: lighten($warning-alert-color, 15%);
+		$warning-alert-color-lighten-20: lighten($warning-alert-color, 25%);
+		$warning-alert-color-lighten-30: lighten($warning-alert-color, 35%);
+		$warning-alert-color-lighten-40: lighten($warning-alert-color, 45%);
+		$warning-alert-color-lighten-50: lighten($warning-alert-color, 55%);
+
+		$warning-alert-color-darken-10: darken($warning-alert-color, 10%);
+		$warning-alert-color-darken-20: darken($warning-alert-color, 20%);
+		$warning-alert-color-darken-30: darken($warning-alert-color, 30%);
+		$warning-alert-color-darken-40: darken($warning-alert-color, 40%);
+		$warning-alert-color-darken-50: darken($warning-alert-color, 50%);
+
+		$primary-dark-gray-color: #1d2327;
+		$secondary-dark-gray-color: #2b3337;
+		$tertiary-dark-gray-color: #757575;
+
+		$primary-light-gray-color: #c3c4c7;
+		$secondary-light-gray-color: #e0e0e0;
+		$tertiary-light-gray-color: #f0f0f0;
+
+		$statuses: ("default", "info", "success", "error", "warning");
+
+
+		--ks-primary-color: #{$primary-color};
+		--ks-primary-color-darker-10: #{$primary-color-darker-10};
+		--ks-primary-color-darker-20: #{$primary-color-darker-20};
+		--ks-primary-color-darker-30: #{$primary-color-darker-30};
+		--ks-primary-color-darker-40: #{$primary-color-darker-40};
+		--ks-primary-color-darker-50: #{$primary-color-darker-50};
+
+		--ks-secondary-color: #{$secondary-color};
+		--ks-secondary-color-darker-10: #{$secondary-color-darker-10};
+		--ks-secondary-color-darker-20: #{$secondary-color-darker-20};
+		--ks-secondary-color-darker-30: #{$secondary-color-darker-30};
+		--ks-secondary-color-darker-40: #{$secondary-color-darker-40};
+		--ks-secondary-color-darker-50: #{$secondary-color-darker-50};
+
+		--ks-tertiary-color: #{$tertiary-color};
+		--ks-tertiary-color-darker-10: #{$tertiary-color-darker-10};
+		--ks-tertiary-color-darker-20: #{$tertiary-color-darker-20};
+		--ks-tertiary-color-darker-30: #{$tertiary-color-darker-30};
+		--ks-tertiary-color-darker-40: #{$tertiary-color-darker-40};
+		--ks-tertiary-color-darker-50: #{$tertiary-color-darker-50};
+
+		--ks-default-color: #{$default-color};
+		--ks-light-color: #{$light-color};
+
+		--ks-info-color: #{$info-color};
+		--ks-danger-color: #{$danger-color};
+		--ks-success-color: #{$success-color};
+		--ks-warning-color: #{$warning-color};
+
+		--ks-default-alert-color: #{$default-alert-color};
+
+		--ks-default-alert-color-lighten-10: #{$default-alert-color-lighten-10};
+		--ks-default-alert-color-lighten-20: #{$default-alert-color-lighten-20};
+		--ks-default-alert-color-lighten-30: #{$default-alert-color-lighten-30};
+		--ks-default-alert-color-lighten-40: #{$default-alert-color-lighten-40};
+		--ks-default-alert-color-lighten-50: #{$default-alert-color-lighten-50};
+
+		--ks-default-alert-color-darken-10: #{$default-alert-color-darken-10};
+		--ks-default-alert-color-darken-20: #{$default-alert-color-darken-20};
+		--ks-default-alert-color-darken-30: #{$default-alert-color-darken-30};
+		--ks-default-alert-color-darken-40: #{$default-alert-color-darken-40};
+		--ks-default-alert-color-darken-50: #{$default-alert-color-darken-50};
+
+		--ks-info-alert-color: #{$info-alert-color};
+
+		--ks-info-alert-color-lighten-10: #{$info-alert-color-lighten-10};
+		--ks-info-alert-color-lighten-20: #{$info-alert-color-lighten-20};
+		--ks-info-alert-color-lighten-30: #{$info-alert-color-lighten-30};
+		--ks-info-alert-color-lighten-40: #{$info-alert-color-lighten-40};
+		--ks-info-alert-color-lighten-50: #{$info-alert-color-lighten-50};
+
+		--ks-info-alert-color-darken-10: #{$info-alert-color-darken-10};
+		--ks-info-alert-color-darken-20: #{$info-alert-color-darken-20};
+		--ks-info-alert-color-darken-30: #{$info-alert-color-darken-30};
+		--ks-info-alert-color-darken-40: #{$info-alert-color-darken-40};
+		--ks-info-alert-color-darken-50: #{$info-alert-color-darken-50};
+
+		--ks-error-alert-color: #{$error-alert-color};
+
+		--ks-error-alert-color-lighten-10: #{$error-alert-color-lighten-10};
+		--ks-error-alert-color-lighten-20: #{$error-alert-color-lighten-20};
+		--ks-error-alert-color-lighten-30: #{$error-alert-color-lighten-30};
+		--ks-error-alert-color-lighten-40: #{$error-alert-color-lighten-40};
+		--ks-error-alert-color-lighten-50: #{$error-alert-color-lighten-50};
+
+		--ks-error-alert-color-darken-10: #{$error-alert-color-darken-10};
+		--ks-error-alert-color-darken-20: #{$error-alert-color-darken-20};
+		--ks-error-alert-color-darken-30: #{$error-alert-color-darken-30};
+		--ks-error-alert-color-darken-40: #{$error-alert-color-darken-40};
+		--ks-error-alert-color-darken-50: #{$error-alert-color-darken-50};
+
+		--ks-success-alert-color: #{$success-alert-color};
+
+		--ks-success-alert-color-lighten-10: #{$success-alert-color-lighten-10};
+		--ks-success-alert-color-lighten-20: #{$success-alert-color-lighten-20};
+		--ks-success-alert-color-lighten-30: #{$success-alert-color-lighten-30};
+		--ks-success-alert-color-lighten-40: #{$success-alert-color-lighten-40};
+		--ks-success-alert-color-lighten-50: #{$success-alert-color-lighten-50};
+
+		--ks-success-alert-color-darken-10: #{$success-alert-color-darken-10};
+		--ks-success-alert-color-darken-20: #{$success-alert-color-darken-20};
+		--ks-success-alert-color-darken-30: #{$success-alert-color-darken-30};
+		--ks-success-alert-color-darken-40: #{$success-alert-color-darken-40};
+		--ks-success-alert-color-darken-50: #{$success-alert-color-darken-50};
+
+		--ks-warning-alert-color: #{$warning-alert-color};
+
+		--ks-warning-alert-color-lighten-10: #{$warning-alert-color-lighten-10};
+		--ks-warning-alert-color-lighten-20: #{$warning-alert-color-lighten-20};
+		--ks-warning-alert-color-lighten-30: #{$warning-alert-color-lighten-30};
+		--ks-warning-alert-color-lighten-40: #{$warning-alert-color-lighten-40};
+		--ks-warning-alert-color-lighten-50: #{$warning-alert-color-lighten-50};
+
+		--ks-warning-alert-color-darken-10: #{$warning-alert-color-darken-10};
+		--ks-warning-alert-color-darken-20: #{$warning-alert-color-darken-20};
+		--ks-warning-alert-color-darken-30: #{$warning-alert-color-darken-30};
+		--ks-warning-alert-color-darken-40: #{$warning-alert-color-darken-40};
+		--ks-warning-alert-color-darken-50: #{$warning-alert-color-darken-50};
+
+		--ks-primary-dark-gray-color: #{$primary-dark-gray-color};
+		--ks-secondary-dark-gray-color: #{$secondary-dark-gray-color};
+		--ks-tertiary-dark-gray-color: #{$tertiary-dark-gray-color};
+
+		--ks-primary-light-gray-color: #{$primary-light-gray-color};
+		--ks-secondary-light-gray-color: #{$secondary-light-gray-color};
+		--ks-tertiary-light-gray-color: #{$tertiary-light-gray-color};
+
+		@each $status in $statuses {
+			&.notice-#{$status} {
+				border-color: var(--ks-#{$status}-alert-color);
+				background-color: var(
+						--ks-#{$status}-alert-color-lighten-30
+				);
+
+				h3 {
+					color: var(--ks-#{$status}-alert-color);
+				}
+
+				.left-icon {
+					color: var(--ks-#{$status}-alert-color);
+				}
+
+				.components-button {
+					&.has-icon {
+						svg {
+							fill: var(--ks-#{$status}-alert-color);
+						}
+
+						&:hover {
+							svg {
+								fill: var(
+										--ks-#{$status}-alert-color-darken-20
+								);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.left-icon {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 40px;
+			left: 0;
+		}
+
+		.components-button {
+			padding: 0;
+
+			&.has-icon {
+				width: 50px;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+
+				svg {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+	}
+}

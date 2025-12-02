@@ -1,0 +1,25 @@
+$bem: (
+	'debug': false,
+	'separator': (
+		'element': '__',
+		'modifier': '_',
+		'state': '-',
+	),
+	'namespace': (
+		'component': 'wp-block-kubio',
+		'hack': '_',
+		'object': 'c',
+		'scope': 's',
+		'test': 'qa',
+		'theme': 't',
+		'utility': 'u',
+	),
+	'shortcodes': (
+		'ab': (
+			'before',
+			'after',
+		),
+	),
+);
+
+@import "~sass-bem";

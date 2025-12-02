@@ -1,0 +1,34 @@
+import {
+    __experimentalRecursionProvider as DefaultRecursionProvider,
+    __experimentalUseHasRecursion as useHasRecursion,
+    __experimentalUseNoRecursiveRenders as useDefaultNoRecursiveRenders,
+} from '@wordpress/block-editor';
+
+import { compose, createHigherOrderComponent } from '@wordpress/compose';
+import { useRef } from '@wordpress/element';
+
+let useNoRecursiveRenders = useDefaultNoRecursiveRenders;
+
+if (DefaultRecursionProvider) {
+    useNoRecursiveRenders = (uniqueId) => {
+        const hasAlreadyRendered = useHasRecursion(uniqueId);
+        const provider = useRef();
+
+        if (!provider.current) {
+            provider.current = compose(
+                createHigherOrderComponent(
+                    (WrappedComponent) => (props) => {
+                        return (
+                            <WrappedComponent {...props} uniqueId={uniqueId} />
+                        );
+                    },
+                    'withKubioRecursionProvider'
+                )
+            )(DefaultRecursionProvider);
+        }
+
+        return [hasAlreadyRendered, provider.current];
+    };
+}
+
+export { useNoRecursiveRenders };

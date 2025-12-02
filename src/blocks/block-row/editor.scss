@@ -1,0 +1,42 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-cgb-block-gutenberg-table-block {
+	background: $green;
+	border: 0.2rem solid $black;
+	color: $black;
+	margin: 0 auto;
+	max-width: 740px;
+	padding: 2rem;
+}
+
+.wp-block-extendstudio-row {
+	.mail-row-placeholder-wrapper {
+		max-width: 700px;
+		margin: auto;
+		text-align: center;
+
+		.components-placeholder__label {
+			margin: auto;
+		}
+
+		fieldset.components-placeholder__fieldset {
+			text-align: center;
+		}
+
+		ul.block-editor-block-variation-picker__variations {
+			justify-content: center !important;
+			align-items: center;
+		}
+
+		fieldset.components-placeholder__fieldset {
+			width: 100%;
+			max-width: unset !important;
+			margin-top: 10px;
+		}
+	}
+}

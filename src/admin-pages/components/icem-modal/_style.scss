@@ -1,0 +1,28 @@
+.icem-modal {
+	width: 640px;
+
+	.components-modal__content {
+		padding: 32px;
+		margin: 0;
+	}
+	.components-modal__header {
+		display: none;
+	}
+
+	.icem-section-title {
+		align-items: flex-start;
+		&__action {
+			svg {
+				width: 16px;
+				cursor: pointer;
+			}
+		}
+	}
+	&__footer {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 10px;
+		margin-top: var(--icem-spacing);
+	}
+}

@@ -1,0 +1,12 @@
+.block-editor-block-toolbar__block-controls.extend-tags-controls {
+
+}
+.components-popover.components-dropdown__content.popover-content-tags{
+  .components-popover__content{
+    display: flex;
+    flex-direction: column;
+    .components-button{
+      white-space: nowrap;
+    }
+  }
+}

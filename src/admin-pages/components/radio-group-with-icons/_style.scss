@@ -1,0 +1,40 @@
+
+.icem-radio-group-with-icons {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 10px;
+}
+
+.icem-radio-item-with-icon {
+	cursor: pointer;
+
+	&__icon__container {
+		opacity: 0.6;
+		border: 2px solid var(--icem-border-color);
+		aspect-ratio: 1.84;
+		border-radius: var(--icem-border-radius);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		flex-direction: column;
+		margin-bottom: 10px;
+		transition: 0.3s ease-in-out;
+		transition-property: opacity, border-color;
+		svg {
+			max-height: min(40px, 80%);
+			max-width: 80%;
+		}
+	}
+	&:hover,
+	&--active {
+		.icem-radio-item-with-icon__icon__container {
+			opacity: 1;
+			border-color: var(--icem-primary-bg-color);
+		}
+	}
+	.components-radio-control__input[type=radio]:checked {
+		background: var(--icem-primary-bg-color);
+		border-color: var(--icem-primary-bg-color);
+	}
+}

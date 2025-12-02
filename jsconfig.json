@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"paths": {
+			"@kubio/*": ["./src/kubio/*"],
+			"@iconvertem/*": ["./src/*"]
+		}
+	},
+	"include": [
+		"./admin/assets/js/**/*",
+		"./frontend/**/*"
+	],
+	"exclude": [
+		"./build/**",
+		"**/node_modules/**"
+	]
+}

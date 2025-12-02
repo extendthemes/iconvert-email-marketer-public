@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project  xmlns:if="ant:if" xmlns:unless="ant:unless" basedir="." default="start" name="iconvert-email-builder">
+	<property description="System environment variables" environment="env" />
+	<property name="source_dir" value="${basedir}" />
+	<property name="build_dir" value="${basedir}/../build" />
+	<property name="zip_dir" value="${basedir}/../zip" />
+	<property name="compose_dir" value="${basedir}/../compose" />
+
+	<condition property="version" value="${env.VERSION}" else="${env.VERSION_BASE}">
+		<isset property="env.VERSION" />
+	</condition>
+	<condition property="build_version" value="${version}${env.VERSION_SUFFIX}" else="${version}">
+		<isset property="env.VERSION_SUFFIX" />
+	</condition>
+
+	<!-- ############################################################################# -->
+
+	<!-- SET PLUGIN NAME ( folder and slug ) -->
+
+	<condition property="domain-suffix" value="-pro" else="">
+		<not>
+			<equals arg1="${env.FREE}" arg2="true" />
+		</not>
+	</condition>
+
+	<property name="plugin_name" value="iconvert-email-marketer${domain-suffix}" />
+
+
+
+	<condition property="plugin_label" value="iConvert Email Marketer PRO" else="iConvert Email Marketer">
+		<not>
+			<equals arg1="${env.FREE}" arg2="true" />
+		</not>
+	</condition>
+
+
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+	<macrodef name="quite_file_replace">
+		<attribute name="file" />
+		<attribute name="token" />
+		<attribute name="value" />
+		<sequential>
+			<if>
+				<available file="@{file}" />
+				<then>
+					<replace file="@{file}" token="@{token}" value="@{value}" />
+				</then>
+				<else>
+					<echo>Nothing to replace.File @{file} does not exists</echo>
+				</else>
+			</if>
+		</sequential>
+	</macrodef>
+
+	<!-- <target name="composer" description="Installing composer dependencies">
+		<exec executable="composer" failonerror="true">
+			<arg value="install" />
+		</exec>
+    </target>     -->
+
+	<target description="Clean Up" name="clean">
+		<echo message="Change new lines to unix style" />
+		<delete quiet="false" failonerror="false" verbose="true" dir="${zip_dir}" />
+		<delete quiet="false" failonerror="false" verbose="true" dir="${compose_dir}" />
+
+		<delete quiet="false" failonerror="false" verbose="true">
+			<fileset dir="${build_dir}">
+				<exclude name="**\*node_modules\**" />
+			</fileset>
+		</delete>
+
+		<delete quiet="false" failonerror="false" verbose="true">
+			<fileset dir="${build_dir}\node_modules\.cache" />
+		</delete>
+
+
+		<mkdir dir="${zip_dir}" />
+		<mkdir dir="${compose_dir}" />
+	</target>
+
+	<target description="Prepare archive content" name="prepare_content" depends="clean">
+		<copy verbose="true" todir="${build_dir}">
+			<fileset dir="${source_dir}">
+				<exclude name="**\*.svn" />
+				<exclude name="**\*build.xml" />
+				<exclude name="**\*.sh" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target description="Compile" name="compile" depends="prepare_content">
+		<echo message="NPM Install" />
+		<exec executable="/bin/bash" failonerror="true">
+			<arg value="${source_dir}/build.sh" />
+			<arg value="${build_dir}" />
+			<arg value="--free" if:true="${env.FREE}" />
+		</exec>
+		<echo message="composer Install" />
+		<exec executable="composer" failonerror="true">
+			<arg value="install" />
+			<arg value="--verbose" />
+			<arg value="--optimize-autoloader" />
+			<arg value="--ignore-platform-reqs" />
+			<arg value="-d" />
+			<arg value="${build_dir}" />
+		</exec>
+
+		<!-- RUN composer install again with no-dev flag to remove the dev dependecies -->
+		<exec executable="composer" failonerror="true">
+			<arg value="install" />
+			<arg value="--no-dev" />
+			<arg value="--verbose" />
+
+			<arg value="--optimize-autoloader" />
+			<arg value="--ignore-platform-reqs" />
+			<arg value="-d" />
+			<arg value="${build_dir}" />
+		</exec>
+	</target>
+
+	<target description="Fix new line" name="fix">
+		<echo message="Change new lines to unix style" />
+		<fixcrlf srcdir="${compose_dir}" includes="**/*.php **/*.css **/*.js  **/README*" eol="unix"
+			eof="asis" />
+	</target>
+
+	<target description="Set Version" name="set_version">
+		<replace file="${build_dir}/index.php" token="@@buildversion@@" value="${build_version}" />
+		<replace file="${build_dir}/index.php" token="@@buildnumber@@" value="${env.BUILD_NUMBER}" />
+		<replace file="${build_dir}/index.php" token="@@plugin-name@@"  value="${plugin_label}" />
+		<replace file="${build_dir}/readme.txt" token="@@buildversion@@" value="${build_version}" />
+	</target>
+
+	<target description="Compose Artifact" name="compose" depends="compile,set_version">
+
+		<copy verbose="true" todir="${compose_dir}/${plugin_name}" includeEmptyDirs="false">
+			<fileset dir="${build_dir}">
+				<exclude name="**\*.svn" />
+				<exclude name="**\*.vscode" />
+				<exclude name=".vscode\**" />
+				<exclude name=".vscode" />
+				<exclude name="src\**" />
+				<exclude name="**\*bin\**" />
+				<exclude name="**\*node_modules\**" />
+				<exclude name="**\*package.json" />
+				<exclude name="**\*package-lock.json" />
+				<exclude name="**\*.env" />
+				<exclude name="**\*.editorconfig" />
+				<exclude name="**\*.eslintignore" />
+				<exclude name="**\*.eslintrc.js" />
+				<exclude name="**\*.npmrc" />
+				<exclude name="**\*.prettierrc.js" />
+				<exclude name="**\*.prettierignore" />
+				<exclude name="**\*.stylelintrc.json" />
+				<exclude name="**\*babel.config.js" />
+				<exclude name="pro\**" if:true="${env.FREE}" />
+				<exclude name="**\*build.sh" />
+				<exclude name="**\*build.xml" />
+				<exclude name="**\*phpcs.xml" />
+				<exclude name="**\*composer.lock" />
+				<exclude name="**\*jsconfig.json" />
+				<exclude name="**\*lerna.json" />
+				<exclude name="**\*.nvmrc" />
+				<exclude name="**\*tsconfig.base.json" />
+				<exclude name="**\*tsconfig.json" />
+				<exclude name="**\*jsconfig.json" />
+				<exclude name="**\*webpack.config.js" />
+				<exclude name="**\*wp-cli.phar" />
+			</fileset>
+		</copy>
+
+	</target>
+
+
+	<target description="start build" name="start" depends="compose,fix">
+
+		<zip destfile="${zip_dir}/${plugin_name}-v${build_version}-build${env.BUILD_NUMBER}.zip">
+			<zipfileset dir="${compose_dir}">
+				<include name="${plugin_name}/**/**" />
+			</zipfileset>
+		</zip>
+
+	</target>
+</project>

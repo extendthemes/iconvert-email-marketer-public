@@ -1,0 +1,6 @@
+.cache
+build
+vendor
+node_modules
+!.*.js
+package-lock.json

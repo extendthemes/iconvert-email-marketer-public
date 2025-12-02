@@ -1,0 +1,30 @@
+body:not(#extra-1) {
+	.icem-input {
+
+		&__input {
+			input {
+				border-radius: var(--icem-border-radius);
+				height: var(--icem-controls-height);
+				min-height: var(--icem-controls-height);
+				font-size: 14px;
+				color: var(--icem-text-color);
+				padding-left: 12px;
+				padding-right: 12px;
+				padding-top: 8px;
+				padding-bottom: 8px;
+				::placeholder {
+					color: var(--icem-muted-text-color);
+
+				}
+			}
+			.components-input-control__backdrop {
+				border-radius: var(--icem-border-radius);
+				border: 1px solid var(--icem-border-color);
+			}
+			.components-input-control__container {
+				border-radius: var(--icem-border-radius);
+				box-shadow: 0px 1px 2px 0px #0000000D;
+			}
+		}
+	}
+}
